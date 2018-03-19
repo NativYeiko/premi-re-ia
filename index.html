@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="ressources\ia\annyang.min.js">
+    <link rel="stylesheet" href="ressources\ia\main.js">
+    <link rel="stylesheet" href="/css/master.css">
+  </head>
+  <body>
+    <script type="text/javascript">
+      if (annyang) {
+        var commands = {
+          'Salut Jaris': function() { alert('Salut Aymeric'); }
+        };
+        // Commande
+        annyang.addCommands(commands);
+        // Commence a écouté.
+        annyang.start();
+        };
+        // introduction de la commande et écoute
+        annyang.setLanguage("fr-FR");
+      }
+    </script>
+  </body>
+</html>
