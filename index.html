@@ -3,24 +3,39 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="annyang-master">
     <link rel="stylesheet" href="ressources\ia\annyang.min.js">
-    <link rel="stylesheet" href="ressources\ia\main.js">
-    <link rel="stylesheet" href="/css/master.css">
+    <link rel="stylesheet" href="">
+
   </head>
   <body>
+    <script src="ressources\ia\annyang.min.js"></script>
     <script type="text/javascript">
-      if (annyang) {
-        var commands = {
-          'Salut Jaris': function() { alert('Salut Aymeric'); }
-        };
+      if ("annyang") {
+        // langue
+        annyang.setLanguage("fr-FR")
         // Commande
         annyang.addCommands(commands);
         // Commence a écouté.
-        annyang.start();
-        };
-        // introduction de la commande et écoute
-        annyang.setLanguage("fr-FR");
-      }
+        annyang.start({autoRestart: true});
+        }
     </script>
+    <script type="text/javascript">
+    if (annyang) {
+  // Add our commands to annyang
+  annyang.addCommands({
+    'hello': function() { alert('Hello world!'); }
+  });
+
+  // Tell KITT to use annyang
+  SpeechKITT.annyang();
+
+  // Define a stylesheet for KITT to use
+  SpeechKITT.setStylesheet('//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/0.3.0/themes/flat.css');
+
+  // Render KITT's interface
+  SpeechKITT.vroom();
+}
+</script>
   </body>
 </html>
